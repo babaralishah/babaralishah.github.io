@@ -17,7 +17,7 @@
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; display: flex; background: var(--bg-color); color: var(--text-color); line-height: 1.6; }
         
         /* Sidebar layout */
-        aside { width: 300px; background: var(--sidebar-bg); color: #fff; height: 100vh; position: fixed; top: 0; left: 0; padding: 2.5rem 1.5rem; display: flex; flex-direction: column; justify-content: space-between; }
+        aside { width: 300px; background: var(--sidebar-bg); color: #fff; height: 100vh; position: fixed; top: 0; left: 0; padding: 2.5rem 1.5rem; display: flex; flex-direction: column; justify-content: space-between; overflow-y: auto; }
         .profile-info h1 { font-size: 1.6rem; margin-bottom: 0.5rem; color: #fff; }
         .profile-info p { font-size: 0.9rem; color: #a5b4fc; margin-bottom: 2rem; font-weight: 500; }
         nav ul { list-style: none; }
@@ -48,10 +48,12 @@
         ul.bullets { margin-left: 1.2rem; margin-top: 0.5rem; }
         ul.bullets li { margin-bottom: 0.4rem; text-align: justify; }
 
+        /* Robust Responsive Breakpoint Fix */
         @media (max-width: 768px) {
             body { flex-direction: column; }
-            aside { width: 100%; height: auto; position: relative; padding: 2rem 1.5rem; }
+            aside { width: 100%; height: auto; position: relative !important; padding: 2rem 1.5rem; }
             main { margin-left: 0; padding: 2rem 1.5rem; }
+            .exp-header { flex-direction: column; }
         }
     </style>
 </head>
@@ -68,8 +70,10 @@
                     <li><a href="#research">Research Experience</a></li>
                     <li><a href="#publications">Publications</a></li>
                     <li><a href="#experience">Professional Experience</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#skills">Technical Skills</a></li>
                     <li><a href="#education">Education</a></li>
+                    <li><a href="#referees">Referees</a></li>
                 </ul>
             </nav>
         </div>
@@ -117,10 +121,17 @@
                 </div>
                 <div class="exp-company">Independent Researcher</div>
                 <ul class="bullets">
-                    <li>Designed and built multiple end-to-end RAG pipelines from scratch covering document ingestion, chunking strategy research, embedding, vector storage, retrieval, reranking, generation, and evaluation.</li>
-                    <li>Engineered query rewriting module using the Google Gemini API to reformulate ambiguous user queries, directly addressing the query-document vocabulary mismatch problem central to answerability research.</li>
-                    <li>Integrated RAGAS evaluation framework using the Groq API with Llama models, measuring context precision, context recall, answer faithfulness, and answer relevance.</li>
-                    <li>Deployed production RAG systems on Hugging Face Spaces and Google Cloud Console containerized with Docker.</li>
+                    <li>Designed and built multiple end-to-end RAG pipelines from scratch, covering the full research-engineering stack: document ingestion, chunking strategy research, embedding, vector storage, retrieval, reranking, generation, and evaluation.</li>
+                    <li>Investigated the impact of dense and hybrid retrieval architectures on retrieval effectiveness across heterogeneous document collections.</li>
+                    <li>Engineered query rewriting module using the Google Gemini API to reformulate ambiguous or under-specified user queries before retrieval directly addressing the query-document vocabulary mismatch problem central to answerability research.</li>
+                    <li>Evaluated cross-encoder reranking strategies for improving passage relevance and grounding quality in retrieval-augmented generation systems.</li>
+                    <li>Built and evaluated a custom LLM response evaluation layer assessing faithfulness, relevance, and groundedness of generated answers operationalizing the distinction between answerable and unanswerable queries in a production setting.</li>
+                    <li>Integrated RAGAS (Retrieval-Augmented Generation Assessment) evaluation framework using the Groq API with Llama models, measuring context precision, context recall, answer faithfulness, and answer relevance across pipeline variants.</li>
+                    <li>Conducted systematic research on chunking strategies (fixed-size, sentence-level, semantic, recursive) and their impact on retrieval quality and hallucination rate empirically identifying optimal chunk size and overlap configurations for different document types.</li>
+                    <li>Implemented response caching layer to reduce redundant LLM calls and improve pipeline latency, with cache invalidation logic tied to query similarity thresholds.</li>
+                    <li>Multi-source data ingestion: built connectors for YouTube video transcripts, web URLs, relational databases, PDFs, Word documents, plain text, and mixed-format corpora enabling the pipeline to operate across heterogeneous knowledge bases.</li>
+                    <li>Deployed production RAG systems on Hugging Face Spaces and Google Cloud Console, containerized with Docker; wrote rich technical documentation covering architecture decisions, evaluation results, and deployment procedures.</li>
+                    <li>Research contribution: systematic empirical study of chunking, retrieval, and evaluation strategies under distribution shift directly relevant to the open research problem of generalizing answerability prediction across heterogeneous knowledge bases.</li>
                 </ul>
             </div>
 
@@ -131,8 +142,23 @@
                 </div>
                 <div class="exp-company">Amazon Nova VIF | Turing x Amazon</div>
                 <ul class="bullets">
-                    <li>Investigated conditions under which production LLMs should withhold a response rather than generate uncertain or hallucinated answers, addressing the core unanswerability problem in RAG systems.</li>
+                    <li>Investigated conditions under which production LLMs should withhold a response rather than generate uncertain or hallucinated answers directly addressing the core unanswerability problem in RAG systems.</li>
                     <li>Constructed a corpus of multi-turn dialogues with annotated 'golden' abstention responses, operationalizing the boundary between answerable and unanswerable queries.</li>
+                    <li>Designed evaluation criteria to measure instruction-following precision and selective abstention aligning with emerging benchmarks such as UAEval4RAG and FollowBench.</li>
+                    <li>Research contribution: Developed structured evaluation methodologies for analyzing abstention behavior and instruction-following reliability in large language models.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="exp-title">Adversarial Robustness & Red-Teaming</span>
+                    <span class="exp-meta">2025</span>
+                </div>
+                <div class="exp-company">Amazon Nova | Turing x Amazon</div>
+                <ul class="bullets">
+                    <li>Conducted systematic adversarial evaluation of reasoning, coherence, and safety failure modes in Amazon Nova LLM analogous to academic red-teaming benchmarks (TruthfulQA, AdvGLUE, HarmBench).</li>
+                    <li>Developed a taxonomy of failure categories (hallucination, instruction drift, safety evasion, bias amplification) to guide iterative model improvement.</li>
+                    <li>Created structured adversarial datasets for RLHF alignment loops, enabling preference-based safety optimization.</li>
                 </ul>
             </div>
 
@@ -143,7 +169,22 @@
                 </div>
                 <div class="exp-company">Salesforce x Tau-Bench | Turing x Salesforce</div>
                 <ul class="bullets">
-                    <li>Designed structured evaluation tasks for multi-step LLM agent reasoning in a banking domain, contributing to the Tau-Bench evaluation framework for agentic AI reliability.</li>
+                    <li>Designed structured evaluation tasks (Medium to Expert difficulty) for multi-step LLM agent reasoning in a banking domain contributing to the Tau-Bench evaluation framework for agentic AI reliability.</li>
+                    <li>Modelled realistic end-to-end agentic task flows, stress-testing LLM tool-use calibration and decision-making under ambiguous constraints.</li>
+                    <li>Research contribution: Generated benchmark datasets for evaluating planning, reasoning, and tool-use reliability in agentic systems.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="exp-title">Algorithmic Bias & Responsible AI Evaluation</span>
+                    <span class="exp-meta">2024</span>
+                </div>
+                <div class="exp-company">Google Gemini | Turing x Google</div>
+                <ul class="bullets">
+                    <li>Built multimodal evaluation frameworks assessing LLM outputs for bias, fairness, and alignment spanning text, image, and structured inputs.</li>
+                    <li>Designed structured annotation schemas for SFT with attention to model behavior consistency and human value alignment.</li>
+                    <li>Research contribution: Investigated multimodal bias and alignment assessment methodologies for responsible AI evaluation.</li>
                 </ul>
             </div>
         </section>
@@ -172,6 +213,9 @@
                     <li>Improved LLM performance through structured Supervised Fine-Tuning (SFT) and RLHF workflows.</li>
                     <li>Automated Python training pipelines, achieving a 35% reduction in training time.</li>
                     <li>Built and curated high-quality domain-specific datasets, increasing model accuracy by 25% across evaluation benchmarks.</li>
+                    <li>Developed scalable human-in-the-loop feedback systems to support iterative model improvement and behavioral optimization.</li>
+                    <li>Implemented adversarial evaluation and structured benchmarking to assess robustness, reasoning quality, safety performance.</li>
+                    <li>Designed multimodal evaluation frameworks across text, image, and structured inputs to standardize model testing.</li>
                 </ul>
             </div>
 
@@ -182,9 +226,45 @@
                 </div>
                 <div class="exp-company">Techfision | Remote (Brooklyn, NY)</div>
                 <ul class="bullets">
-                    <li>Led development of a production web platform integrating machine learning features and data-driven decision systems. Built “Kaarka,” an AI-powered real estate app.</li>
+                    <li>Led development of a production web platform integrating machine learning features and data-driven decision systems.</li>
+                    <li>Built “Kaarka,” an AI-powered real estate app with recommendation algorithms and user analytics.</li>
                 </ul>
             </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="exp-title">Software Engineer</span>
+                    <span class="exp-meta">Aug 2022 – July 2023</span>
+                </div>
+                <div class="exp-company">The Right Software | Remote (Stockholm, Sweden)</div>
+                <ul class="bullets">
+                    <li>Developed backend-driven web applications using Node.js, MongoDB, building scalable RESTful APIs for data-intensive systems.</li>
+                    <li>Achieved 20% improvement in API task success rate through performance profiling and endpoint optimization.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="exp-title">Associate Software Engineer</span>
+                    <span class="exp-meta">July 2020 – July 2022</span>
+                </div>
+                <div class="exp-company">Micromerger | Islamabad</div>
+                <ul class="bullets">
+                    <li>Contributed to development of scalable web applications, focusing on modular architecture and maintainable code design.</li>
+                    <li>Architected and deployed 99.9% reliable Airflow ETL pipelines, migrating multi-GB MySQL data to ClickHouse.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <ul class="bullets">
+                <li><strong>Retrieval Augmented Generation (RAG)</strong> – DeepLearning.AI</li>
+                <li><strong>ChatGPT Prompt Engineering for Developers</strong> - DeepLearning.AI</li>
+                <li><strong>Applied Machine Learning: Feature Engineering</strong> - LinkedIn Learning</li>
+                <li><strong>Data Science Foundations: Python Scientific Stack</strong> - LinkedIn Learning</li>
+                <li><strong>Introduction to Large Language Models</strong> - Google Cloud Education</li>
+            </ul>
         </section>
 
         <section id="skills">
@@ -192,17 +272,32 @@
             
             <div class="tag-category">Research Methods & Evaluation</div>
             <div class="tags-container">
-                <span class="tag">Experimental Design</span><span class="tag">Ablation Studies</span><span class="tag">Benchmark Construction</span><span class="tag">LLM Evaluation</span><span class="tag">Adversarial Testing</span>
+                <span class="tag">Experimental Design</span><span class="tag">Ablation Studies</span><span class="tag">Benchmark Construction</span><span class="tag">Human Annotation Protocols</span><span class="tag">Statistical Analysis</span><span class="tag">Retrieval Evaluation</span><span class="tag">LLM Evaluation</span><span class="tag">Error Analysis</span><span class="tag">Answerability Assessment</span><span class="tag">Adversarial Testing</span>
             </div>
 
             <div class="tag-category">RAG & Retrieval Systems</div>
             <div class="tags-container">
-                <span class="tag">FAISS</span><span class="tag">BM25</span><span class="tag">Hybrid Search</span><span class="tag">Query Rewriting</span><span class="tag">Cross-Encoder Reranking</span><span class="tag">LangChain</span><span class="tag">LlamaIndex</span>
+                <span class="tag">FAISS</span><span class="tag">BM25</span><span class="tag">Hybrid Search</span><span class="tag">Query Rewriting</span><span class="tag">Cross-Encoder Reranking</span><span class="tag">Caching</span><span class="tag">Multi-source Ingestion</span><span class="tag">Chunking Strategies</span><span class="tag">LangChain</span><span class="tag">LlamaIndex</span>
+            </div>
+
+            <div class="tag-category">LLM Alignment & Evaluation</div>
+            <div class="tags-container">
+                <span class="tag">RAGAS</span><span class="tag">Custom Evaluation Frameworks</span><span class="tag">SFT</span><span class="tag">RLHF</span><span class="tag">Adversarial Evaluation</span><span class="tag">Red-Teaming</span><span class="tag">Safety Benchmarking</span><span class="tag">Hallucination Mitigation</span><span class="tag">Answerability Assessment</span>
+            </div>
+
+            <div class="tag-category">Generative AI & LLM Tools</div>
+            <div class="tags-container">
+                <span class="tag">Hugging Face Transformers</span><span class="tag">Ollama (Local Inference)</span><span class="tag">Groq API</span><span class="tag">Google Gemini API</span><span class="tag">Llama 3/3.1</span><span class="tag">Prompt Engineering</span><span class="tag">Agentic AI</span>
             </div>
 
             <div class="tag-category">Languages, MLOps & Cloud</div>
             <div class="tags-container">
-                <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Docker</span><span class="tag">Google Cloud Console</span><span class="tag">Hugging Face Spaces</span><span class="tag">Apache Airflow</span>
+                <span class="tag">Python (Primary)</span><span class="tag">SQL</span><span class="tag">JavaScript</span><span class="tag">Docker</span><span class="tag">Google Cloud Console</span><span class="tag">Hugging Face Spaces</span><span class="tag">Apache Airflow</span><span class="tag">Git</span><span class="tag">CI/CD Pipelines</span><span class="tag">AWS (EC2, S3, Lambda)</span>
+            </div>
+
+            <div class="tag-category">Databases & Stores</div>
+            <div class="tags-container">
+                <span class="tag">MongoDB</span><span class="tag">PostgreSQL</span><span class="tag">ClickHouse</span><span class="tag">FAISS (Vector Store)</span>
             </div>
         </section>
 
@@ -214,9 +309,14 @@
                     <span class="exp-meta">2016 – 2020</span>
                 </div>
                 <div class="exp-company">International Islamic University, Islamabad</div>
-                <p><strong>Capstone Project:</strong> Comparative Evaluation of Machine Learning Architectures for Predictive Temporal Modelling.</p>
+                <p style="margin-top: 0.5rem;"><strong>Capstone Research & Development Project:</strong> Comparative Evaluation of Machine Learning Architectures for Predictive Temporal Modelling.</p>
+                <ul class="bullets">
+                    <li><strong>Core Focus:</strong> Investigated the predictive performance, convergence behavior, and generalization capabilities of multiple machine learning approaches for temporal forecasting tasks. Conducted experimental evaluation using cross-validation and statistical performance metrics.</li>
+                    <li><strong>Relevant Coursework:</strong> Data Structures and Algorithms, Artificial Intelligence, Data Mining, Probability & Statistics.</li>
+                </ul>
             </div>
         </section>
+
         <section id="referees">
             <h2>Referees</h2>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
@@ -224,13 +324,17 @@
                     <strong>Dr. Jamal Abdul Nasir</strong><br>
                     Assistant Professor, School of Computer Science<br>
                     University of Galway, Ireland<br>
-                    📧 jamal.nasir@universityofgalway.ie
+                    📧 jamal.nasir@universityofgalway.ie<br>
+                    📞 +353899835164<br>
+                    <span style="font-size:0.85rem; color:#64748b;">Relationship: Academic Referee and Research Mentor</span>
                 </div>
                 <div>
                     <strong>Mr. Zulqarnain Hashmi</strong><br>
                     Faculty Member & IT Consultant<br>
                     International Islamic University<br>
-                    📧 zulqarnain.hashmi@iiu.edu.pk
+                    📧 zulqarnain.hashmi@iiu.edu.pk<br>
+                    📞 +92 312 9995550<br>
+                    <span style="font-size:0.85rem; color:#64748b;">Relationship: Academic Mentor / Project Supervisor</span>
                 </div>
             </div>
         </section>
