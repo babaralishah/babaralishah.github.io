@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babar Ali Shah | ML Research Engineer</title>
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #333333;
+            --primary-color: #2b4c7e;
+            --secondary-color: #4a7bb0;
+            --sidebar-bg: #1e2d42;
+            --border-color: #e9ecef;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; display: flex; background: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+        
+        /* Sidebar layout */
+        aside { width: 300px; background: var(--sidebar-bg); color: #fff; height: 100vh; position: fixed; top: 0; left: 0; padding: 2.5rem 1.5rem; display: flex; flex-direction: column; justify-content: space-between; }
+        .profile-info h1 { font-size: 1.6rem; margin-bottom: 0.5rem; color: #fff; }
+        .profile-info p { font-size: 0.9rem; color: #a5b4fc; margin-bottom: 2rem; font-weight: 500; }
+        nav ul { list-style: none; }
+        nav ul li { margin-bottom: 0.8rem; }
+        nav ul li a { color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: color 0.2s; }
+        nav ul li a:hover { color: #fff; }
+        .contact-info { font-size: 0.85rem; color: #94a3b8; }
+        .contact-info a { color: #fff; text-decoration: none; display: block; margin-top: 0.3rem; }
+
+        /* Main Content Container */
+        main { margin-left: 300px; padding: 3rem 4rem; max-width: 1000px; width: 100%; }
+        section { padding: 2.5rem 0; border-bottom: 1px solid var(--border-color); }
+        section:last-child { border-bottom: none; }
+        h2 { font-size: 1.75rem; color: var(--primary-color); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        p { margin-bottom: 1rem; text-align: justify; }
+        
+        /* Grid Tags for Skills & Interests */
+        .tags-container { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+        .tag { background: #fff; border: 1px solid #cbd5e1; padding: 0.4rem 0.8rem; border-radius: 4px; font-size: 0.85rem; color: #475569; font-weight: 500; }
+        .tag-category { font-weight: bold; margin-top: 1rem; color: var(--secondary-color); font-size: 0.95rem; }
+
+        /* Experience Item Styles */
+        .exp-item { margin-bottom: 2rem; }
+        .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem; }
+        .exp-title { font-size: 1.15rem; font-weight: bold; color: #1e293b; }
+        .exp-meta { font-size: 0.9rem; color: #64748b; font-weight: 500; }
+        .exp-company { font-style: italic; color: var(--secondary-color); margin-bottom: 0.5rem; font-size: 0.95rem; }
+        ul.bullets { margin-left: 1.2rem; margin-top: 0.5rem; }
+        ul.bullets li { margin-bottom: 0.4rem; text-align: justify; }
+
+        @media (max-width: 768px) {
+            body { flex-direction: column; }
+            aside { width: 100%; height: auto; position: relative; padding: 2rem 1.5rem; }
+            main { margin-left: 0; padding: 2rem 1.5rem; }
+            .exp-header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <aside>
+        <div class="profile-info">
+            <h1>Babar Ali Shah</h1>
+            <p>ML Research Engineer & Independent AI Researcher</p>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#interests">Research Interests</a></li>
+                    <li><a href="#research">Research Experience</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#experience">Professional Experience</a></li>
+                    <li><a href="#skills">Technical Skills</a></li>
+                    <li><a href="#education">Education</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="contact-info">
+            <p>📍 Dublin, Ireland</p>
+            <a href="mailto:syedbabar957@gmail.com">📧 syedbabar957@gmail.com</a>
+            <a href="tel:+353899559490">📞 +353 89 955 9490</a>
+            <div style="margin-top: 1rem; display: flex; gap: 10px;">
+                <a href="#" target="_blank">LinkedIn</a> | 
+                <a href="#" target="_blank">GitHub</a> | 
+                <a href="#" target="_blank">ORCID</a>
+            </div>
+        </div>
+    </aside>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Machine Learning Research Engineer and Independent AI Researcher based in Dublin with expertise in Retrieval-Augmented Generation (RAG) systems, LLM fine-tuning (SFT/RLHF), answerability assessment, and trustworthy AI systems. I have designed and evaluated end-to-end RAG pipelines incorporating hybrid retrieval, query rewriting, reranking, caching, hallucination mitigation, and multi-source ingestion deployed on Hugging Face Spaces and Google Cloud.</p>
+            <p>Through research and industrial collaborations with Amazon, Google, and Salesforce, I have contributed to LLM alignment, adversarial robustness evaluation, agentic benchmarking, and responsible AI assessment. My long-term research interests lie at the intersection of trustworthy generative AI, answerability prediction, selective generation, and reliable knowledge-intensive systems.</p>
+        </section>
+
+        <section id="interests">
+            <h2>Research Interests</h2>
+            <div class="tags-container">
+                <span class="tag">Retrieval-Augmented Generation</span>
+                <span class="tag">Trustworthy and Reliable AI Systems</span>
+                <span class="tag">Answerability Prediction & Selective Generation</span>
+                <span class="tag">Abstention Mechanisms in LLMs</span>
+                <span class="tag">Hallucination Detection and Mitigation</span>
+                <span class="tag">LLM Evaluation and Benchmarking</span>
+                <span class="tag">Agentic AI Reliability</span>
+                <span class="tag">Responsible AI</span>
+                <span class="tag">Human-AI Alignment</span>
+            </div>
+        </section>
+
+        <section id="research">
+            <h2>Research Experience</h2>
+            
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="exp-title">Modular RAG Systems — Architecture, Evaluation & Deployment</span>
+                    <span class="exp-meta">2026</span>
+                </div>
+                <div class="exp-company">Independent Researcher</div>
+                <ul class="bullets">
+                    <li>Designed and built multiple end-to-end RAG pipelines from scratch covering document ingestion, chunking strategy research, embedding, vector storage, retrieval, reranking, generation, and evaluation.</li>
+                    <li>Engineered query rewriting module using the Google Gemini API to reformulate ambiguous user queries, directly addressing the query-document vocabulary mismatch problem central to answerability research.</li>
+                    <li>Integrated RAGAS evaluation framework using the Groq API with Llama models, measuring context precision, context recall, answer faithfulness, and answer relevance.</li>
+                    <li>Deployed production RAG systems on Hugging Face Spaces and Google Cloud Console containerized with Docker.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="exp-title">LLM Abstention & Answerability Research</span>
+                    <span class="exp-meta">2025</span>
+                </div>
+                <div class="exp-company">Amazon Nova VIF | Turing x Amazon</div>
+                <ul class="bullets">
+                    <li>Investigated conditions under which production LLMs should withhold a response rather than generate uncertain or hallucinated answers, addressing the core unanswerability problem in RAG systems.</li>
+                    <li>Constructed a corpus of multi-turn dialogues with annotated 'golden' abstention responses, operationalizing the boundary between answerable and unanswerable queries.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="exp-title">Agentic Reasoning & Tool-Use Benchmarking</span>
+                    <span class="exp-meta">2025 - 2026</span>
+                </div>
+                <div class="exp-company">Salesforce x Tau-Bench | Turing x Salesforce</div>
+                <ul class="bullets">
+                    <li>Designed structured evaluation tasks for multi-step LLM agent reasoning in a banking domain, contributing to the Tau-Bench evaluation framework for agentic AI reliability.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>Publications & Manuscripts</h2>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="exp-title">From Abstention to Grounded Answers: An Empirical Ablation Study on Query Rewriting and Feature Enhancement in Modular RAG Systems</span>
+                    <span class="exp-meta">Under Preparation</span>
+                </div>
+                <p style="margin-top:0.5rem; font-style:italic;">Shah, B.A. (in preparation).</p>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="exp-title">Machine Learning Fine-Tuning Engineer</span>
+                    <span class="exp-meta">Mar 2024 – Jan 2026</span>
+                </div>
+                <div class="exp-company">Turing | Remote (Palo Alto, CA)</div>
+                <ul class="bullets">
+                    <li>Improved LLM performance through structured Supervised Fine-Tuning (SFT) and RLHF workflows.</li>
+                    <li>Automated Python training pipelines, achieving a 35% reduction in training time.</li>
+                    <li>Built and curated high-quality domain-specific datasets, increasing model accuracy by 25% across evaluation benchmarks.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="exp-title">Software Development Engineer</span>
+                    <span class="exp-meta">Aug 2023 – Feb 2024</span>
+                </div>
+                <div class="exp-company">Techfision | Remote (Brooklyn, NY)</div>
+                <ul class="bullets">
+                    <li>Led development of a production web platform integrating machine learning features and data-driven decision systems. Built “Kaarka,” an AI-powered real estate app.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            
+            <div class="tag-category">Research Methods & Evaluation</div>
+            <div class="tags-container">
+                <span class="tag">Experimental Design</span><span class="tag">Ablation Studies</span><span class="tag">Benchmark Construction</span><span class="tag">LLM Evaluation</span><span class="tag">Adversarial Testing</span>
+            </div>
+
+            <div class="tag-category">RAG & Retrieval Systems</div>
+            <div class="tags-container">
+                <span class="tag">FAISS</span><span class="tag">BM25</span><span class="tag">Hybrid Search</span><span class="tag">Query Rewriting</span><span class="tag">Cross-Encoder Reranking</span><span class="tag">LangChain</span><span class="tag">LlamaIndex</span>
+            </div>
+
+            <div class="tag-category">Languages, MLOps & Cloud</div>
+            <div class="tags-container">
+                <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Docker</span><span class="tag">Google Cloud Console</span><span class="tag">Hugging Face Spaces</span><span class="tag">Apache Airflow</span>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="exp-title">Bachelor of Computer Science</span>
+                    <span class="exp-meta">2016 – 2020</span>
+                </div>
+                <div class="exp-company">International Islamic University, Islamabad</div>
+                <p><strong>Capstone Project:</strong> Comparative Evaluation of Machine Learning Architectures for Predictive Temporal Modelling.</p>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
